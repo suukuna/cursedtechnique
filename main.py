@@ -10,5 +10,19 @@ while True:
         response = requests.get(base_url)
         data = response.json()
         result = f'{data["iss_position"]["longitude"]};{data["iss_position"]["latitude"]}'
+        file.write(result)
         print(data)
         print(result)
+
+
+# написати програму, яка кожні 5 секунд записує  в csv файл
+#
+#  (нагадую, це текстовий файл, в якому значення умовних колонок розділяються крапкою та комою (;) )
+#
+# дані про положення Міжнародної космічної станції по довжині та широті
+#
+# посилання тут http://api.open-notify.org/iss-now.json
+#
+# на основі даної програми створити докорфайл, код завантажити в докер імедж, та запустити в контейнері
+#
+# здати код проєкту на гіті
