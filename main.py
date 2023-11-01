@@ -9,7 +9,7 @@ while True:
     with open('data.csv', 'a') as file:
         response = requests.get(base_url)
         data = response.json()
-        result = f'{data["iss_position"]["longitude"]};{data["iss_position"]["latitude"]}'
+        result = f'{data["iss_position"]["longitude"]};{data["iss_position"]["latitude"]}\n'
         file.write(result)
         print(data)
         print(result)
